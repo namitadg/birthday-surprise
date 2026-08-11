@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Birthday Security System 🎂</title>
+<style>
+*{box-sizing:border-box} body{margin:0;background:#05070a;color:#d7ffe5;font-family:Consolas,Monaco,monospace;min-height:100vh;overflow-x:hidden}
+.wrap{max-width:900px;margin:auto;padding:28px 18px}.terminal{border:1px solid #1eff76;border-radius:14px;box-shadow:0 0 35px #0b6b35;background:#080d0b;overflow:hidden}
+.bar{background:#101815;padding:10px 14px;color:#7affad}.dots{display:inline-flex;gap:6px;margin-right:12px}.dots i{width:10px;height:10px;border-radius:50%;background:#567}
+main{padding:28px}.muted{color:#75a889}.green{color:#42ff86}.yellow{color:#ffe36e}.red{color:#ff6e7a}
+#boot{min-height:310px}.line{margin:9px 0}.cursor{display:inline-block;width:9px;height:18px;background:#42ff86;animation:blink .8s infinite}@keyframes blink{50%{opacity:0}}
+.hidden{display:none}.hero{text-align:center;padding:20px 0}.hero h1{font-family:Arial,sans-serif;font-size:clamp(34px,8vw,72px);margin:10px 0;color:#fff;text-shadow:0 0 20px #1eff76}.cake{font-size:90px;animation:bounce 1.2s infinite alternate}@keyframes bounce{to{transform:translateY(-12px)}}
+button{border:1px solid #42ff86;background:#0b2416;color:#bfffd2;padding:13px 20px;border-radius:9px;font:inherit;cursor:pointer}button:hover{background:#123d23}
+.card{border:1px solid #245c39;border-radius:12px;padding:20px;margin:20px 0;background:#09130e}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.stat{padding:15px;border:1px solid #1d4d31;border-radius:9px}.num{font-size:28px;color:#42ff86}
+.progress{height:10px;background:#122019;border-radius:20px;overflow:hidden;margin:14px 0}.progress span{display:block;height:100%;width:0;background:#42ff86;transition:width 1s}
+#confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden}.piece{position:absolute;top:-20px;width:8px;height:14px;animation:fall 3s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+.small{font-size:13px}.footer{text-align:center;color:#557a63;padding:20px}
+</style>
+</head>
+<body>
+<div id="confetti"></div>
+<div class="wrap"><div class="terminal">
+<div class="bar"><span class="dots"><i></i><i></i><i></i></span>birthday-security-system — bash</div>
+<main>
+<section id="boot">
+<div class="line">$ ssh bestfriend@birthday</div>
+<div class="line muted">Connecting to friendship-server...</div>
+<div class="line green">Authentication successful ✓</div>
+<div class="line">$ sudo birthday --start</div>
+<div class="line" id="scan">Scanning birthday database...</div>
+<div class="progress"><span id="bar"></span></div>
+<div class="line muted">Checking memories... <span id="m1">pending</span></div>
+<div class="line muted">Checking friendship uptime... <span id="m2">pending</span></div>
+<div class="line muted">Detecting cake... <span id="m3">pending</span></div>
+<div class="line yellow" id="warning">⚠ CRITICAL EVENT DETECTED: BIRTHDAY</div>
+<br><button onclick="launch()">🚀 ACCESS BIRTHDAY SYSTEM</button>
+</section>
+
+<section id="surprise" class="hidden">
+<div class="hero">
+<div class="cake">🎂</div>
+<div class="muted">SYSTEM MESSAGE: DEPLOYMENT SUCCESSFUL</div>
+<h1>HAPPY BIRTHDAY<br>BRO! ❤️</h1>
+<p class="green">Friendship.service — ACTIVE FOREVER</p>
+</div>
+
+<div class="card">
+<h2>🖥️ Friend Monitoring Dashboard</h2>
+<div class="stats">
+<div class="stat">Friendship Uptime<div class="num">∞</div></div>
+<div class="stat">Bakchodi<div class="num">99%</div></div>
+<div class="stat">Memories<div class="num">∞</div></div>
+<div class="stat">Expiry<div class="num">NEVER</div></div>
+</div>
+</div>
+
+<div class="card">
+<h2>💚 Birthday Patch v2026.08</h2>
+<p>May your new version include:</p>
+<p>✓ Unlimited happiness<br>✓ Career upgrades 🚀<br>✓ Money without memory leaks 💰<br>✓ Adventures without downtime 🌎<br>✓ Good health and peace<br>✓ Zero production bugs 😂</p>
+</div>
+
+<div class="card">
+<h2>❤️ A Message From My Heart</h2>
+<p>Bro, some people enter our lives for a chapter, but a few become a part of the whole story. You are one of those people for me.</p>
+<p>We've shared crazy laughs, random conversations, stupid jokes, difficult days and countless memories. And honestly, life is a lot better knowing that I have a friend like you beside me.</p>
+<p>Thank you for being the kind of friend who stays — through the good days, the bad days, the crashes, the bugs and all the unexpected errors life throws at us. ❤️</p>
+<p>I hope this new version of your life brings you everything you deserve: peace in your heart, success in your work, happiness in your everyday life, and lots of reasons to smile.</p>
+<p>Never forget how special you are to the people who love and care about you. I'm genuinely lucky to call you my best friend.</p>
+<p class="yellow">No matter how many versions life releases...</p>
+<p class="green">our friendship will always remain a permanent feature. ❤️</p>
+<p class="green">git commit -m "Another beautiful year of my best friend's life"</p>
+<p class="green">git push origin forever</p>
+</div>
+
+<div class="card">
+<h2>❤️ A Message From My Heart</h2>
+<p>Bro, if life were a huge codebase, you would be one of the best lines of code ever added to mine. ❤️</p>
+<p>You've seen my good days, my bad days, my stupid decisions, my crashes and all my completely unnecessary bugs — and somehow, you're still here. 😂</p>
+<p>Some friendships happen by chance, but the memories we create make them feel like family. I'm genuinely grateful for every laugh, every late-night conversation, every crazy plan and every moment we've shared.</p>
+<p>I hope this new version of your life brings you everything you deserve: peace in your heart, success in your work, happiness in your everyday life, and countless reasons to smile.</p>
+<p>And no matter how much life changes, one thing should never change:</p>
+<p class="green"><strong>I'll always be just one call away. ❤️</strong></p>
+<p>So here's to more adventures, more laughter, more bakchodi, and a lifetime of memories.</p>
+<p class="yellow"><strong>Happy Birthday, my brother, my best friend, and my forever teammate. 🎂❤️</strong></p>
+<p class="green">git commit -m "Another legendary year added with love"</p>
+<p class="green">git push origin happiness --force-with-love</p>
+</div>
+
+<div class="hero">
+<button onclick="celebrate()">🎉 DEPLOY FINAL CELEBRATION</button>
+<p class="small muted">Tip: turn on your phone/computer sound if you want the celebration beep.</p>
+</div>
+<div class="footer">systemctl enable friendship --now<br>STATUS: 🟢 RUNNING • EXPIRY: NEVER</div>
+</section>
+</main></div></div>
+
+<script>
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+async function launch(){
+ document.querySelector('#bar').style.width='100%';
+ await wait(500);document.querySelector('#m1').textContent='OK ✓';
+ await wait(500);document.querySelector('#m2').textContent='∞ ✓';
+ await wait(500);document.querySelector('#m3').textContent='FOUND ✓';
+ await wait(600);document.querySelector('#boot').classList.add('hidden');
+ document.querySelector('#surprise').classList.remove('hidden'); celebrate();
+}
+function celebrate(){
+ for(let i=0;i<90;i++){
+  const p=document.createElement('div');p.className='piece';
+  p.style.left=Math.random()*100+'vw';p.style.animationDelay=Math.random()*1.5+'s';
+  p.style.background=['#42ff86','#ffe36e','#ff6e7a','#8ed8ff','#fff'][Math.floor(Math.random()*5)];
+  p.style.transform='rotate('+Math.random()*360+'deg)';document.querySelector('#confetti').appendChild(p);
+  setTimeout(()=>p.remove(),4500);
+ }
+ try{const c=new AudioContext();const o=c.createOscillator();const g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=880;g.gain.value=.05;o.start();o.stop(c.currentTime+.18)}catch(e){}
+}
+</script>
+</body>
+</html>
